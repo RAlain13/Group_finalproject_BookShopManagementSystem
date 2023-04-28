@@ -66,7 +66,22 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Images\book-of-black-cover-closed.png" />
     <Content Include="Assets\Images\book-stack.png" />
+    <Content Include="Assets\Images\books.png" />
+    <Content Include="Assets\Images\businessman.png" />
+    <Content Include="Assets\Images\calendar.png" />
+    <Content Include="Assets\Images\cancel.png" />
+    <Content Include="Assets\Images\category.png" />
+    <Content Include="Assets\Images\combo-chart.png" />
+    <Content Include="Assets\Images\credit-card-machine.png" />
+    <Content Include="Assets\Images\diskette.png" />
+    <Content Include="Assets\Images\home.png" />
+    <Content Include="Assets\Images\man-in-suit-and-tie.png" />
+    <Content Include="Assets\Images\pin.png" />
+    <Content Include="Assets\Images\profile-user.png" />
+    <Content Include="Assets\Images\search.png" />
+    <Content Include="Assets\Images\setting.png" />
     <Content Include="Assets\Images\shopping-cart.png" />
     <Content Include="Assets\Lib\css\bootstrap-grid.css" />
     <Content Include="Assets\Lib\css\bootstrap-grid.min.css" />
@@ -111,6 +126,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="Views\Admin\Author.aspx" />
+    <Content Include="Views\Admin\Books.aspx" />
+    <Content Include="Views\Admin\Categories.aspx" />
+    <Content Include="Views\Admin\Seller.aspx" />
     <Content Include="Views\Login.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -125,6 +144,34 @@
     </Compile>
     <Compile Include="Views\Admin\AdminMaster.Master.designer.cs">
       <DependentUpon>AdminMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\Author.aspx.cs">
+      <DependentUpon>Author.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\Author.aspx.designer.cs">
+      <DependentUpon>Author.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\Books.aspx.cs">
+      <DependentUpon>Books.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\Books.aspx.designer.cs">
+      <DependentUpon>Books.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\Categories.aspx.cs">
+      <DependentUpon>Categories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\Categories.aspx.designer.cs">
+      <DependentUpon>Categories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\Seller.aspx.cs">
+      <DependentUpon>Seller.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\Seller.aspx.designer.cs">
+      <DependentUpon>Seller.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

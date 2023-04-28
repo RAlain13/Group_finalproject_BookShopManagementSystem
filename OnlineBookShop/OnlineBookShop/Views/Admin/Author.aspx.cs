@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace OnlineBookShop.Views.Admin
 {
-    public partial class AdminMaster : System.Web.UI.MasterPage
+    public partial class Author : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
