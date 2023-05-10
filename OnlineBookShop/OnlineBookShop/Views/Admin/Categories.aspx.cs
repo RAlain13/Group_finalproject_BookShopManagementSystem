@@ -9,9 +9,118 @@ namespace OnlineBookShop.Views.Admin
 {
     public partial class Categories : System.Web.UI.Page
     {
+        Models.Functions Con;
         protected void Page_Load(object sender, EventArgs e)
         {
+            //declaring and initializing the connection module
+            Con = new Models.Functions();
+            ShowCategories();
+        }
+        public void ShowCategories()
+        {
+            //displaying category details
+            string Query = "Select * from CategoryTb1";
+            CategoriesList.DataSource = Con.GetData(Query);
+            CategoriesList.DataBind();
+        }
 
+        protected void savebtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (CatNameTb.Value == "" || DescriptionTb.Value == "")
+                {
+                    ErrMsg.Text = "Missing Data!!";
+                }
+                else
+                {
+                    //inserting categories record inside the respective table
+                    string CName = CatNameTb.Value;
+                    string CDesc = DescriptionTb.Value;
+                    string Query = "insert into CategoryTb1 values( '{0}','{1}')";
+                    Query = string.Format(Query, CName, CDesc);
+                    Con.SetData(Query);
+                    ShowCategories();
+                    ErrMsg.Text = "Category Details are Inserted Successfully!!";
+                    CatNameTb.Value = "";
+                    DescriptionTb.Value = "";
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrMsg.Text = ex.Message;
+            }
+        }
+        int Key = 0;
+        protected void CategoriesList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //displaying category module in the table format
+            CatNameTb.Value = CategoriesList.SelectedRow.Cells[2].Text;
+            DescriptionTb.Value = CategoriesList.SelectedRow.Cells[3].Text;
+            if (CatNameTb.Value == "")
+            {
+                Key = 0;
+            }
+            else
+            {
+                Key = Convert.ToInt32(CategoriesList.SelectedRow.Cells[1].Text);
+            }
+        }
+
+        protected void EditBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (CatNameTb.Value == "" || DescriptionTb.Value == "")
+                {
+                    ErrMsg.Text = "Missing Data!!";
+                }
+                else
+                {
+                    //performing updation
+                    string CName = CatNameTb.Value;
+                    string CDesc = DescriptionTb.Value;
+                    string Query = "update CategoryTb1 set CatName ='{0}',CatDescription='{1}' where CatId = {2}";
+                    Query = string.Format(Query, CName, CDesc, CategoriesList.SelectedRow.Cells[1].Text);
+                    Con.SetData(Query);
+                    ShowCategories();
+                    ErrMsg.Text = "Category Details are Updated Successfully!!";
+                    CatNameTb.Value = "";
+                    DescriptionTb.Value = "";
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrMsg.Text = ex.Message;
+            }
+        }
+
+        protected void deleteBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (CatNameTb.Value == "" || DescriptionTb.Value == "")
+                {
+                    ErrMsg.Text = "Missing Data!!";
+                }
+                else
+                {
+                    //deleting record from the table
+                    string CName = CatNameTb.Value;
+                    string CDesc = DescriptionTb.Value;
+                    string Query = "delete from CategoryTb1 where CatId = {0}";
+                    Query = string.Format(Query, CategoriesList.SelectedRow.Cells[1].Text);
+                    Con.SetData(Query);
+                    ShowCategories();
+                    ErrMsg.Text = "Category Details are Deleted Successfully!!";
+                    CatNameTb.Value = "";
+                    DescriptionTb.Value = "";
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrMsg.Text = ex.Message;
+            }
         }
     }
 }
