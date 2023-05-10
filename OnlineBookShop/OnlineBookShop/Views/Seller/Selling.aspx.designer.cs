@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OnlineBookShop.Views.Admin {
+namespace OnlineBookShop.Views.Seller {
     
     
-    public partial class WebForm1 {
+    public partial class Selling {
         
         /// <summary>
         /// BNameTb control.
@@ -22,76 +22,40 @@ namespace OnlineBookShop.Views.Admin {
         protected global::System.Web.UI.HtmlControls.HtmlInputText BNameTb;
         
         /// <summary>
-        /// BAuthCb control.
+        /// BPriceTb control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList BAuthCb;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText BPriceTb;
         
         /// <summary>
-        /// BCatCb control.
+        /// BQtyTb control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList BCatCb;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText BQtyTb;
         
         /// <summary>
-        /// PriceTb control.
+        /// DateTb control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText PriceTb;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl DateTb;
         
         /// <summary>
-        /// QtyTb control.
+        /// AddToBillBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText QtyTb;
-        
-        /// <summary>
-        /// ErrMsg control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ErrMsg;
-        
-        /// <summary>
-        /// UpdateBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button UpdateBtn;
-        
-        /// <summary>
-        /// SaveBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SaveBtn;
-        
-        /// <summary>
-        /// DeleteBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button DeleteBtn;
+        protected global::System.Web.UI.WebControls.Button AddToBillBtn;
         
         /// <summary>
         /// BooksList control.
@@ -101,5 +65,32 @@ namespace OnlineBookShop.Views.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView BooksList;
+        
+        /// <summary>
+        /// BillList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView BillList;
+        
+        /// <summary>
+        /// GrdTotalTb control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label GrdTotalTb;
+        
+        /// <summary>
+        /// PrintBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button PrintBtn;
     }
 }

@@ -19,7 +19,7 @@ namespace OnlineBookShop.Views.Admin
         public void ShowSeller()
         {
             //displaying the data 
-            string Query = "Select * from SellerTb1";
+            string Query = "Select * from SellerTbl";
             SellerList.DataSource = Con.GetData(Query);
             SellerList.DataBind();
         }
@@ -28,7 +28,7 @@ namespace OnlineBookShop.Views.Admin
         {
             try
             {
-                if (SNameTb.Value == "" || EmailTb.Value == "" || PhoneTb.Value == "" || AddressTb.Value == "")
+                if (SNameTb.Value == "" || EmailTb.Value == "" || PhoneTb.Value=="" || AddressTb.Value=="")
                 {
                     ErrMsg.Text = "Missing Data!!";
                 }
@@ -40,7 +40,7 @@ namespace OnlineBookShop.Views.Admin
                     string SPhone = PhoneTb.Value;
                     string SAdd = AddressTb.Value;
 
-                    string Query = "insert into SellerTb1 values( '{0}','{1}','{2}','{3}')";
+                    string Query = "insert into SellerTbl values( '{0}','{1}','{2}','{3}')";
                     Query = string.Format(Query, SName, SMail, SPhone, SAdd);
                     Con.SetData(Query);
                     ShowSeller();
@@ -90,7 +90,7 @@ namespace OnlineBookShop.Views.Admin
                     string SMail = EmailTb.Value;
                     string SPhone = PhoneTb.Value;
                     string SAdd = AddressTb.Value;
-                    string Query = "update SellerTb1 set SelName ='{0}',SelEmail='{1}',SelPhone='{2}',SelAddress='{3}' where SelId={4}";
+                    string Query = "update SellerTbl set SelName ='{0}',SelEmail='{1}',SelPhone='{2}',SelPass='{3}' where SelId={4}";
                     Query = string.Format(Query, SName, SMail, SPhone, SAdd, SellerList.SelectedRow.Cells[1].Text);
                     Con.SetData(Query);
                     ShowSeller();
@@ -118,8 +118,8 @@ namespace OnlineBookShop.Views.Admin
                 else
                 {
                     //performing deletion
-                    string Query = "delete from SellerTb1 where SelId={0}";
-                    Query = string.Format(Query, SellerList.SelectedRow.Cells[1].Text);
+                    string Query = "delete from SellerTbl where SelId={0}";
+                    Query = string.Format(Query,SellerList.SelectedRow.Cells[1].Text);
                     Con.SetData(Query);
                     ShowSeller();
                     ErrMsg.Text = "Seller Details has been  Deleted Successfully!!";
