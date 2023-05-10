@@ -32,7 +32,7 @@ namespace OnlineBookShop.Views
             else
             {
                 //selecting and giving authorize only to the seller that are been given by ADMIN
-                string Query = "Select * from SellerTb1 where SelEmail ='{0}' and SelPass='{1}'";
+                string Query = "Select * from SellerTbl where SelEmail ='{0}' and SelPass='{1}'";
                 Query = string.Format(Query, UnameTb.Value, PasswordTb.Value);
                 DataTable dt = Con.GetData(Query);
                 if (dt.Rows.Count == 0)
